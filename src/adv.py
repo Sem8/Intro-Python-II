@@ -113,7 +113,7 @@ while True:
     cmd = input('Type n, s, w, e to move to a another room, q to quit game, i to print inventory,  ')
     if cmd in valid_directions:
         player1.move_direction(cmd)
-    elif cmd == 'i':
+    elif cmd == 'i' or cmd == 'inventory':
         player1.print_inventory()
     elif cmd == 'q':
         print('Goodbye!')
