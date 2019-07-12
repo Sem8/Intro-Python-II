@@ -37,14 +37,6 @@ class Room:
             exits.append('w')
         return 'Exits:' + ', '.join(exits)
     def add_item(self, item_name):
-        # item_to_add = None
-        # for item in self.items:
-        #     if item.name.lower() == item_name.lower():
-        #         item_to_add = item
-        #         break
-        # if item_to_add is None:
-        #     print(f'Did not find {item_name}')
-        #     return
         self.items.append(item_name)
     def remove_item(self, item_name):
         self.items.remove(item_name)

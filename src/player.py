@@ -36,13 +36,24 @@ class Player:
                 self.items.remove(an_item)
                 self.current_room.add_item(an_item)
                 an_item.on_drop({'name': name})
-    def take_items(self, item):
-        for an_item in self.items:
-            name = an_item.get_item()['name']
-            if name == item:
-                self.items.append(an_item)
-                self.current_room.remove_item(an_item)
-                an_item.on_take({'name': name})
+                
+    def take_items(self, inputItem):
+        roomItems = self.current_room.items
+        for item in roomItems:
+            if item.item_name == inputItem:
+                self.items.append(item)
+                roomItems.remove(item)
+                item.on_take(item)
+                return None
+        print(f' {inputItem} is not in {self.current_room.name}')
+
+    # def take_items(self, item):
+    #     for an_item in self.items:
+    #         name = an_item.get_item()['name']
+    #         if name == item:
+    #             self.items.append(an_item)
+    #             self.current_room.remove_item(an_item)
+    #             an_item.on_take({'name': name})
 
     # def take_items(self, it_name):
     #     item_to_take = None

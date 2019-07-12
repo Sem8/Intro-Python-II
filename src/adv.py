@@ -115,8 +115,6 @@ while True:
         player1.move_direction(cmd)
     elif cmd == 'i':
         player1.print_inventory()
-    # elif cmd == 'myinventory':
-    #     player1.getInventory()
     elif cmd == 'q':
         print('Goodbye!')
         exit()
