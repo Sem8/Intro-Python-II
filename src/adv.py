@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from item import *
 
 # Declare all the rooms
 
@@ -93,6 +94,10 @@ room['treasure'].s_to = room['narrow']
 
 
 player1 = Player('player1', room['outside'])
+
+ruby = Item('Red Ruby', 'This is red ruby.')
+gem = Item('Green Gem', 'This is green gem')
+redbull = Item('Red Bull', 'Red bull energy power')
 
 while True:
     direction_moves = ['n', 's', 'w', 'e', 'q']
