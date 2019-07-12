@@ -9,5 +9,6 @@ class Room:
         self.n_to = None
         self.n_to = None
         self.n_to = None
+        self.items = []
 
 # print(Room)
