@@ -21,7 +21,7 @@ class Room:
 
     def _get_item_string(self):
         if len(self.items) > 0:
-            return '\n' + ', '.join([item.name for item in self.items]) + '\n'
+            return '\n' + ', '.join([item.item_name for item in self.items]) + '\n'
         else:
             return ''
 
@@ -37,14 +37,26 @@ class Room:
             exits.append('w')
         return 'Exits:' + ', '.join(exits)
     def add_item(self, item_name):
-        item_to_add = None
-        for item in self.items:
-            if item.name.lower() == item_name.lower():
-                item_to_add = item
-                break
-        if item_to_add is None:
-            print(f'Did not find {item_name}')
-            return
+        # item_to_add = None
+        # for item in self.items:
+        #     if item.name.lower() == item_name.lower():
+        #         item_to_add = item
+        #         break
+        # if item_to_add is None:
+        #     print(f'Did not find {item_name}')
+        #     return
+        self.items.append(item_name)
+    def remove_item(self, item_name):
+        self.items.remove(item_name)
+    def check_for_items(self):
+        if self.items:
+            print('You are carrying:\n' + ', '.join([item.item_name for item in self.items]) + '\n')
+        else:
+            print('There are no items')
+            return None
+    def updateItems(self, newItems):
+        self.items = newItems
+    pass
 
 
 
